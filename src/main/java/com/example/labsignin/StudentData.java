@@ -17,9 +17,7 @@ public class StudentData {
         this.cte = cte;
     }
 
-    public Integer getGrade() {
-        return grade;
-    }
+    public Integer getGrade() {return grade;}
 
     public void setGrade(Integer grade) {
         this.grade = grade;
@@ -33,9 +31,7 @@ public class StudentData {
         this.name = name;
     }
 
-    public Image getImage() {
-        return image;
-    }
+    public Image getImage() {return image;}
 
     public void setImage(Image image) {
         this.image = image;
