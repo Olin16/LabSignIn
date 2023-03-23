@@ -10,7 +10,7 @@ public class HelloController {
 
     public TextField nameField;
     public ComboBox bandList;
-    public Button signIn;
+    public Button signIn = new Button("Sign in");
     public ImageView studentPortrait;
     public TextField email;
     public TableView infoList;
@@ -18,6 +18,7 @@ public class HelloController {
     public ComboBox gradeList;
     public ComboBox studentList;
     public ComboBox imageList;
+    public PasswordField password;
 
 
     public void initialize() throws FileNotFoundException {
