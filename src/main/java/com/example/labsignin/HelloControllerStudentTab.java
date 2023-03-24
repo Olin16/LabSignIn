@@ -15,8 +15,16 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
 
     public void initialize() throws FileNotFoundException {
+        signIn.setOnAction(actionEvent -> {
+            signInConfirm.setText("You've signed in");
+
+        });
+
+        bandList.getItems().add("X Band");
+        bandList.getItems().add("Y Band");
+        return null;
+    }
 
 
     }
 
-    }
