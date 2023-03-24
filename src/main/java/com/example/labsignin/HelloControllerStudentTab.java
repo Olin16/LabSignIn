@@ -11,6 +11,8 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
     public ComboBox bandList;
     public Button signIn = new Button("Sign In");
     public ImageView studentPortrait;
+    public Label signInConfirm;
+
 
 
 
