@@ -18,12 +18,18 @@ public class HelloController {
     public ComboBox gradeList;
     public ComboBox studentList;
     public ComboBox imageList;
+    public Label signInConfirm;
     public PasswordField password;
 
 
     public void initialize() throws FileNotFoundException {
+        signIn.setOnAction(actionEvent -> {
+            signInConfirm.setText("You've signed in");
 
+        });
 
+        bandList.getItems().add("X Band");
+        bandList.getItems().add("Y Band");
     }
 
     }
