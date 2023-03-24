@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 import java.io.FileNotFoundException;
 
 public class HelloControllerStudentTab extends HelloControllerTorianTab{
-
+//ok
     public TextField nameField;
     public ComboBox bandList;
     public Button signIn = new Button("Sign In");
@@ -22,7 +22,6 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
         bandList.getItems().add("X Band");
         bandList.getItems().add("Y Band");
-        return null;
     }
 
 

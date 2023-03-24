@@ -21,10 +21,10 @@ public class HelloControllerTorianTab {
     public void initialize() throws FileNotFoundException {
 
 
-        public PasswordField getPassword() {
-            System.out.println(password.getAccessibleText());
-            return password;
+    }
+    public PasswordField getPassword() {
+        System.out.println(password.getAccessibleText());
+        return password;
 
-        }
     }
 }
