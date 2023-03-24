@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" tabClosingPolicy="UNAVAILABLE" type="TabPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloControllerStudentTab">
   <tabs>
     <Tab text="Student">
       <content>
@@ -53,7 +53,7 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <PasswordField layoutX="609.0" layoutY="373.0" prefHeight="24.0" prefWidth="245.0" promptText="Password">
+                  <PasswordField fx:id="password" layoutX="609.0" layoutY="373.0" prefHeight="24.0" prefWidth="245.0" promptText="Password">
                      <font>
                         <Font name="Courier New Bold" size="13.0" />
                      </font>
@@ -80,4 +80,4 @@
       </content>
     </Tab>
   </tabs>
-</TabPane>
+</fx:root>
