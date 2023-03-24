@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 import java.io.FileNotFoundException;
 
 public class HelloControllerTorianTab {
+    //ok
+}
     public TextField email;
     public TableView infoList;
     public ComboBox cteList;
