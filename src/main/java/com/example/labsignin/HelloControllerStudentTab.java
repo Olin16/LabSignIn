@@ -12,6 +12,7 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
     public Button signIn = new Button("Sign In");
     public ImageView studentPortrait;
     public Label signInConfirm;
+    public Button switchView;
 
 
 
@@ -26,6 +27,9 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
         bandList.getItems().add("Y Band");
     }
 
+    public void doTheSwitch() {
+
+    }
 
     }
 
