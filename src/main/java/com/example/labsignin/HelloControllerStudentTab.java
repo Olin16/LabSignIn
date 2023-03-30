@@ -25,6 +25,8 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
         bandList.getItems().add("X Band");
         bandList.getItems().add("Y Band");
+
+
     }
 
     public void doTheSwitch() {
