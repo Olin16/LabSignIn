@@ -2,6 +2,8 @@ package com.example.labsignin;
 
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.io.FileNotFoundException;
 
@@ -16,6 +18,9 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
 
 
+    public void keyEvent(KeyEvent ANY){
+
+    }
 
     public void initialize() throws FileNotFoundException {
         signIn.setOnAction(actionEvent -> {
