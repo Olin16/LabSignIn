@@ -1,9 +1,13 @@
 package com.example.labsignin;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 
@@ -34,7 +38,12 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
     }
 
-    public void doTheSwitch() {
+    public void doTheSwitch() throws Exception {
+        Stage stage = (Stage) nameField.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Torian-view.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

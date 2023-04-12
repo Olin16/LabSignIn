@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloControllerTorianTab">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloControllerTorianTab">
    <children>
-       <PasswordField fx:id="password" layoutX="609.0" layoutY="373.0" prefHeight="24.0" prefWidth="245.0" promptText="Password">
+       <PasswordField fx:id="passwordControl" layoutX="609.0" layoutY="373.0" prefHeight="24.0" prefWidth="245.0" promptText="Password">
            <font>
                <Font name="Courier New Bold" size="13.0" />
            </font>
@@ -34,7 +34,7 @@
        <Label layoutX="1162.0" layoutY="81.0" text="Student Image" />
        <ComboBox fx:id="gradeList" layoutX="594.0" layoutY="103.0" prefHeight="25.0" prefWidth="83.0" />
        <Button fx:id="imageList" layoutX="1112.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="191.0" text="Student Image" />
-      <Button mnemonicParsing="false" text="Student Tab" />
+      <Button fx:id="studentTab" mnemonicParsing="false" onAction="#doTheSwitch" text="Student Tab" />
 
    </children>
 </Pane>
