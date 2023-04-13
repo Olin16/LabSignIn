@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class HelloControllerStudentTab extends HelloControllerTorianTab{
 //ok
@@ -20,22 +21,29 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
     public Label signInConfirm;
     public Button switchView;
 
+    ArrayList<String> names = new ArrayList<>();
 
 
+    public void initialize() throws FileNotFoundException {
 
+        bandList.getItems().add("X Band");
+        bandList.getItems().add("Y Band");
+
+        new StudentData("Cooking",15,"Farhad", null);
+    }
 
     public void keyEvent(KeyEvent ANY){
 
     }
 
-    public void initialize() throws FileNotFoundException {
-        signIn.setOnAction(actionEvent -> {
-            signInConfirm.setText("You've signed in");
+    public void signedIn() {
+            String name = nameField.getText();
+            names.add(name);
+            System.out.println(name);
+            System.out.println(names);
+            for (StudentData eachStudent: StudentData.getAllStudents()) {
 
-        });
-
-        bandList.getItems().add("X Band");
-        bandList.getItems().add("Y Band");
+            }
 
 
     }
@@ -49,5 +57,5 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
     }
 
-    }
+}
 

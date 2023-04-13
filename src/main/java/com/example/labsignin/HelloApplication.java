@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        scene.setOnKeyPressed(keyEvent -> System.out.println(keyEvent.getCode()));
+      //  scene.setOnKeyPressed(keyEvent -> System.out.println(keyEvent.getCode()));
     }
 
     public static void main(String[] args) {
