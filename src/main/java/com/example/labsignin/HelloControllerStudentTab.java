@@ -29,7 +29,7 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
         bandList.getItems().add("X Band");
         bandList.getItems().add("Y Band");
 
-        new StudentData("Cooking",15,"Farhad", null);
+        new StudentData("Cooking","15","Farhad", null);
     }
 
     public void keyEvent(KeyEvent ANY){

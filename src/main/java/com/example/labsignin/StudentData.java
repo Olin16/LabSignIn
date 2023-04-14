@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class StudentData {
     static ArrayList<StudentData> allStudents = new ArrayList<StudentData>();
     private static String cte;
-    private static Integer grade;
+    private static String grade;
     private static String name;
     private static Image image;
 
-    public StudentData(String cte, Integer grade, String name, Image image) {
+    public StudentData(String cte, String grade, String name, Image image) {
         this.cte = cte;
         this.grade = grade;
         this.name = name;
@@ -36,9 +36,9 @@ public class StudentData {
         this.cte = cte;
     }
 
-    static public Integer getGrade() {return grade;}
+    static public String getGrade() {return grade;}
 
-    public void setGrade(Integer grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 
