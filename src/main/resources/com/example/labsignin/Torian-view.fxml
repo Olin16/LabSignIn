@@ -19,7 +19,7 @@
        </PasswordField>
        <TableView fx:id="infoList" editable="true" fixedCellSize="0.0" layoutX="133.0" layoutY="102.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="228.0" prefWidth="1172.0">
            <columns>
-               <TableColumn fx:id="cteProgramColumn" prefWidth="459.56019592285156" text="CTE Program " />
+               <TableColumn fx:id="cteColumn" prefWidth="459.56019592285156" text="CTE Program " />
                <TableColumn fx:id="gradeColumn" minWidth="0.0" prefWidth="84.43978881835938" text="Grade" />
                <TableColumn fx:id="studentFullNameColumn" prefWidth="426.2078552246094" text="Student Full Name" />
                <TableColumn fx:id="studentImageColumn" minWidth="0.0" prefWidth="201.8924560546875" text="Student Image" />

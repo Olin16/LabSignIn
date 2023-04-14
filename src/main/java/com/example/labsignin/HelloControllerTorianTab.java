@@ -1,5 +1,7 @@
 package com.example.labsignin;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -41,10 +43,19 @@ public class HelloControllerTorianTab {
     public Label grade;
     public Label studentFullName;
     public Label studentImage;
-
+    Image studentImageSelected;
 
 
     public void initialize() throws FileNotFoundException {
+        ArrayList<StudentData> temporaryList = StudentData.getAllStudents();
+        // Turn the read data's ArrayList into an ObservableList
+        ObservableList temporaryObservableList = FXCollections.observableArrayList(temporaryList);
+        // Make that ObservableList the list for my TableView
+        infoList.setItems(temporaryObservableList);
+        cteColumn.setCellValueFactory(new PropertyValueFactory<>("cte"));
+        studentFullNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        gradeColumn.setCellValueFactory(new PropertyValueFactory<>("grade"));
+        studentImageColumn.setCellValueFactory(new PropertyValueFactory<>("image"));
 
         email.setVisible(false);
         infoList.setVisible(false);
@@ -81,9 +92,8 @@ public class HelloControllerTorianTab {
             FileChooser fileChooser = new FileChooser();
             Stage stage = (Stage) email.getScene().getWindow();
             File selectedFile = fileChooser.showOpenDialog(stage);
-            Image studentImage = null;
             try {
-                studentImage = new Image(new FileInputStream(selectedFile));
+                studentImageSelected = new Image(new FileInputStream(selectedFile));
             } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
@@ -103,16 +113,21 @@ public class HelloControllerTorianTab {
                 passwordControl.setVisible(false);
             }
         });
-        //StudentData newStudent = new StudentData(cteList.getSelectionModel().getSelectedItem().toString(),"11th","farhad",null);
 
         submitButton.setOnAction(event -> {
-            if (gradeListBoolean && cteListBoolean && studentListBoolean && imageListBoolean);
-            cteList.getSelectionModel().getSelectedItem().toString();
+            if (gradeListBoolean && cteListBoolean && studentListBoolean){ //&& imageListBoolean) {
+                String cteSubmit = cteList.getSelectionModel().getSelectedItem().toString();
+                String gradeSubmit = gradeList.getSelectionModel().getSelectedItem().toString();
+                String studentNameSubmit = studentList.getText();
+                StudentData newStudent = new StudentData(cteSubmit, gradeSubmit, studentNameSubmit, studentImageSelected);
+                infoList.getItems().add(newStudent);
+
+            }
+
         });
 
         cteList.setOnAction(event ->  {
             cteListBoolean = true;
-
         });
 
         gradeList.setOnAction(event ->  {
@@ -122,6 +137,7 @@ public class HelloControllerTorianTab {
         studentList.setOnAction(event ->  {
             studentListBoolean = true;
         });
+
         imageList.setOnAction(event ->  {
         imageListBoolean = true;
         });
