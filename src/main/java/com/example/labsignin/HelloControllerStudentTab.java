@@ -24,7 +24,7 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
     ArrayList<String> names = new ArrayList<>();
 
 
-    public void initialize() throws FileNotFoundException {
+    public void initialize()  {
 
         bandList.getItems().add("X Band");
         bandList.getItems().add("Y Band");

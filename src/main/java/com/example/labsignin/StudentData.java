@@ -2,15 +2,16 @@ package com.example.labsignin;
 
 import javafx.scene.image.Image;
 
+import java.io.*;
 import java.util.ArrayList;
 
 
-public class StudentData {
-    static ArrayList<StudentData> allStudents = new ArrayList<StudentData>();
-    private static String cte;
-    private static String grade;
-    private static String name;
-    private static Image image;
+public class StudentData implements Serializable {
+    static ArrayList<StudentData> allStudents = new ArrayList<>();
+    private String cte;
+    private String grade;
+    private String name;
+    private transient Image image;
 
     public StudentData(String cte, String grade, String name, Image image) {
         this.cte = cte;
@@ -24,11 +25,11 @@ public class StudentData {
         return allStudents;
     }
 
-    public void setAllStudents(ArrayList<StudentData> allStudents) {
-        this.allStudents = allStudents;
+    static public void setAllStudents(ArrayList<StudentData> allStudentsNew) {
+        allStudents = allStudentsNew;
     }
 
-    static public String getCte() {
+    public String getCte() {
         return cte;
     }
 
@@ -36,13 +37,13 @@ public class StudentData {
         this.cte = cte;
     }
 
-    static public String getGrade() {return grade;}
+    public String getGrade() {return grade;}
 
     public void setGrade(String grade) {
         this.grade = grade;
     }
 
-    static public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -50,9 +51,55 @@ public class StudentData {
         this.name = name;
     }
 
-    static public Image getImage() {return image;}
+    public Image getImage() {return image;}
 
     public void setImage(Image image) {
         this.image = image;
     }
+
+    public String toString() {
+        return name + " " + grade + " " + cte;
+    }
+
+    static public void saveData() {
+        try {
+            // throw IOException?
+            FileOutputStream fileOut = new FileOutputStream("Save");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            System.out.println(StudentData.getAllStudents());
+            out.writeObject(StudentData.getAllStudents());
+            out.close();
+            fileOut.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    static public void restoreData() {
+        try {
+            FileInputStream fileIn = new FileInputStream("Save");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            // Restored saved objects into Film's arrayList of all films\
+            ArrayList tempList = (ArrayList<StudentData>) in.readObject();
+            StudentData.setAllStudents(tempList);
+            System.out.println(StudentData.getAllStudents());
+
+            in.close();
+
+            /*
+            FileInputStream fileIn = new FileInputStream("Save");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            // Restored saved objects into Film's arrayList of all films\
+            ArrayList<String> temporaryList = (ArrayList<String>) in.readObject();
+            ObservableList<String> temporaryObservableList = FXCollections.observableArrayList(temporaryList);
+            infoList.setItems(temporaryObservableList);
+            in.close();
+             */
+            fileIn.close();
+        } catch (Exception ex){
+            System.out.println(ex);
+        }
+    }
+
+
 }

@@ -8,16 +8,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloControllerTorianTab">
+<Pane maxHeight="900.0" maxWidth="1400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labsignin.HelloControllerTorianTab">
    <children>
-       <PasswordField fx:id="passwordControl" layoutX="609.0" layoutY="373.0" prefHeight="24.0" prefWidth="245.0" promptText="Password">
-           <font>
-               <Font name="Courier New Bold" size="13.0" />
-           </font>
-       </PasswordField>
-       <TableView fx:id="infoList" editable="true" fixedCellSize="0.0" layoutX="133.0" layoutY="102.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="228.0" prefWidth="1172.0">
+      <VBox layoutX="609.0" layoutY="373.0" prefHeight="73.0" prefWidth="245.0">
+         <children>
+             <PasswordField fx:id="passwordControl" prefHeight="24.0" prefWidth="245.0" promptText="Password">
+                 <font>
+                     <Font name="Courier New Bold" size="13.0" />
+                 </font>
+             </PasswordField>
+            <Label fx:id="passwordWrong" alignment="CENTER" prefHeight="24.0" prefWidth="245.0" textAlignment="CENTER" />
+         </children>
+      </VBox>
+       <TableView fx:id="infoList" editable="true" fixedCellSize="0.0" layoutX="133.0" layoutY="102.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="745.0" prefWidth="1172.0">
            <columns>
                <TableColumn fx:id="cteColumn" prefWidth="459.56019592285156" text="CTE Program " />
                <TableColumn fx:id="gradeColumn" minWidth="0.0" prefWidth="84.43978881835938" text="Grade" />
@@ -31,11 +37,14 @@
        <Label fx:id="cteProgram" layoutX="332.0" layoutY="83.0" text="CTE Program" />
        <Label fx:id="grade" layoutX="614.0" layoutY="83.0" text="Grade" />
        <Label fx:id="studentFullName" layoutX="843.0" layoutY="83.0" text="Student Full Name" />
-       <Label fx:id="studentImage" layoutX="1162.0" layoutY="81.0" text="Student Image" />
-       <ComboBox fx:id="gradeList" layoutX="594.0" layoutY="103.0" prefHeight="25.0" prefWidth="83.0" />
-       <Button fx:id="imageList" layoutX="1112.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="191.0" text="Student Image" />
+       <Label fx:id="studentImage" layoutX="1163.0" layoutY="81.0" text="Student Image" />
+       <ComboBox fx:id="gradeList" layoutX="594.0" layoutY="103.0" prefHeight="25.0" prefWidth="85.0" />
+       <Button fx:id="imageList" layoutX="1112.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" text="Student Image" />
       <Button fx:id="studentTab" mnemonicParsing="false" onAction="#doTheSwitch" text="Student Tab" />
-      <Button fx:id="submitButton" layoutX="52.0" layoutY="204.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="submitButton" layoutX="-301.0" layoutY="428.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="735.0" rotate="-90.0" text="Submit">
+         <font>
+            <Font size="45.0" />
+         </font></Button>
 
    </children>
 </Pane>
