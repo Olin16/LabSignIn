@@ -11,12 +11,14 @@ public class StudentData implements Serializable {
     private String cte;
     private String grade;
     private String name;
+    private String band;
     private transient Image image;
 
-    public StudentData(String cte, String grade, String name, Image image) {
+    public StudentData(String cte, String grade, String name, String band, Image image) {
         this.cte = cte;
         this.grade = grade;
         this.name = name;
+        this.band = band;
         this.image = image;
         allStudents.add(this);
     }
@@ -49,6 +51,13 @@ public class StudentData implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getBand() {
+        return band;
+    }
+
+    public void setBand(String band) {
+        this.band = band;
     }
 
     public Image getImage() {return image;}

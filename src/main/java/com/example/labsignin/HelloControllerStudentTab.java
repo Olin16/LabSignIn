@@ -21,29 +21,45 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
     public Label signInConfirm;
     public Button switchView;
 
-    ArrayList<String> names = new ArrayList<>();
+    int currentIndex;
 
 
-    public void initialize()  {
+    ArrayList<StudentData> names = new ArrayList<>();
+
+    Object selectedItem;
+
+
+    public void initialize() throws FileNotFoundException {
+        currentIndex = 0;
+
 
         bandList.getItems().add("X Band");
         bandList.getItems().add("Y Band");
 
     }
 
-    public void keyEvent(KeyEvent ANY){
+    public void comboBand() {
+        int selectedIndex = bandList.getSelectionModel().getSelectedIndex();
+        selectedItem = bandList.getSelectionModel().getSelectedItem();
+
+        System.out.println("Selection made: [" + selectedIndex + "] " + selectedItem);
+        System.out.println("   ChoiceBox.getValue(): " + bandList.getValue());
 
     }
 
+
     public void signedIn() {
             String name = nameField.getText();
-            names.add(name);
-            System.out.println(name);
-            System.out.println(names);
             for (StudentData eachStudent: StudentData.getAllStudents()) {
+                if (eachStudent.getName().equalsIgnoreCase(name)) {
+                    System.out.println("YAY! found: " + eachStudent.getName());
+                    StudentData signedInStudent = new StudentData(eachStudent.getCte(), eachStudent.getGrade(), eachStudent.getName(), selectedItem.toString(), eachStudent.getImage());
+                    names.add(signedInStudent);
 
+                    // TODO: display eachStudent.getImage() once that works
+                }
             }
-
+        System.out.println("All students that have signed in: " + names + grade);
 
     }
 
