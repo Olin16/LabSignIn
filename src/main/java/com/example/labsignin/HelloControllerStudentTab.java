@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class HelloControllerStudentTab extends HelloControllerTorianTab{
+public class HelloControllerStudentTab {
 //ok
     public TextField nameField;
     public ComboBox bandList;
@@ -49,17 +49,18 @@ public class HelloControllerStudentTab extends HelloControllerTorianTab{
 
 
     public void signedIn() {
-            String name = nameField.getText();
+            String typedName = nameField.getText();
             for (StudentData eachStudent: StudentData.getAllStudents()) {
-                if (eachStudent.getName().equalsIgnoreCase(name)) {
+                if (eachStudent.getName().contains(typedName)) {
                     System.out.println("YAY! found: " + eachStudent.getName());
-                    StudentData signedInStudent = new StudentData(eachStudent.getCte(), eachStudent.getGrade(), eachStudent.getName(), selectedItem.toString(), eachStudent.getImage());
+                    StudentData signedInStudent = new StudentData(eachStudent.getGrade(), eachStudent.getName(), selectedItem.toString());
                     names.add(signedInStudent);
 
                     // TODO: display eachStudent.getImage() once that works
+                    studentPortrait.setImage(eachStudent.getImage());
                 }
             }
-        System.out.println("All students that have signed in: " + names + grade);
+        System.out.println("All students that have signed in: " + names);
 
     }
 

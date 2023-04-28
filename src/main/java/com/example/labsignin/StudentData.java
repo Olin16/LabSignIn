@@ -8,19 +8,26 @@ import java.util.ArrayList;
 
 public class StudentData implements Serializable {
     static ArrayList<StudentData> allStudents = new ArrayList<>();
+    static ArrayList<StudentData> allSignedIn = new ArrayList<>();
     private String cte;
     private String grade;
     private String name;
     private String band;
     private transient Image image;
 
-    public StudentData(String cte, String grade, String name, String band, Image image) {
+    public StudentData(String cte, String grade, String name, Image image) {
         this.cte = cte;
         this.grade = grade;
         this.name = name;
-        this.band = band;
         this.image = image;
         allStudents.add(this);
+    }
+
+    public StudentData(String grade, String name, String band) {
+        this.grade = grade;
+        this.name = name;
+        this.band = band;
+        allSignedIn.add(this);
     }
 
     static public ArrayList<StudentData> getAllStudents() {
@@ -52,13 +59,6 @@ public class StudentData implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public String getBand() {
-        return band;
-    }
-
-    public void setBand(String band) {
-        this.band = band;
-    }
 
     public Image getImage() {return image;}
 
@@ -67,7 +67,11 @@ public class StudentData implements Serializable {
     }
 
     public String toString() {
-        return name + " " + grade + " " + cte;
+        if (cte != null) {
+            return name + " " + grade + " " + cte;
+        } else {
+            return name + " " + grade + " " + band;
+        }
     }
 
     static public void saveData() {
